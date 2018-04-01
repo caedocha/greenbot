@@ -14,5 +14,8 @@ class GreenBot < SlackRubyBot::Bot
 
 end
 
+SlackRubyBot.configure do |config|
+  config.token = ENV['SLACK_API_TOKEN']
+end
 
 GreenBot.run
