@@ -2,8 +2,12 @@ require 'slack-ruby-bot'
 
 class GreenBot < SlackRubyBot::Bot
 
-  command 'hello' do |client, data, match|
-    client.say(text: 'culo', channel: data.channel)
+  def self.getting_started
+    File.open('getting_started.txt', 'r').read
+  end
+
+  command 'getting started' do |client, data, match|
+    client.say(text: getting_started, channel: data.channel)
   end
 
   command 'how?' do |client, data, match|
